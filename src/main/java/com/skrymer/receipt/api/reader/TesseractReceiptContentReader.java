@@ -27,7 +27,7 @@ public class TesseractReceiptContentReader implements ReceiptContentReader {
 
     try {
       Tesseract tesseract = new Tesseract();
-      tesseract.setTessVariable(CHAR_WHITELIST, "0123456789,$./ABCDEFGHIJKLMNOPQRSTUWXYZ");
+      tesseract.setTessVariable(CHAR_WHITELIST, "0123456789,-$./ABCDEFGHIJKLMNOPQRSTUWXYZ");
       BufferedImage sanitisedImage = imageSanitiser.sanitise(pathToReceipt);
       return tesseract.doOCR(sanitisedImage);
     } catch (Exception e) {

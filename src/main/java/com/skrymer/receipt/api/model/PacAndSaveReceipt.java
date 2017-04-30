@@ -12,10 +12,12 @@ public class PacAndSaveReceipt extends Receipt {
 
     String[] lines = content.split("\n");
     for(String line : lines){
-      String text = line.substring(0, line.indexOf("$")).trim();
-      String price = line.substring(line.indexOf("$") + 1, line.length()).trim();
+      if(line.contains("$")) {
+        String text = line.substring(0, line.indexOf("$")).trim();
+        String price = line.substring(line.lastIndexOf("$") + 1, line.length()).trim();
 
-      receipt.addItem(new ReceiptItem(text, price));
+        receipt.addItem(new ReceiptItem(text, price));
+      }
     }
 
     return receipt;

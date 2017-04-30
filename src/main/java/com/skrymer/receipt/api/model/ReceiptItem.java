@@ -1,5 +1,7 @@
 package com.skrymer.receipt.api.model;
 
+import com.google.common.base.MoreObjects;
+
 import java.math.BigDecimal;
 
 /**
@@ -19,6 +21,11 @@ public class ReceiptItem {
   }
 
   public BigDecimal getPrice() {
-    return new BigDecimal(price);
+    return price == null ? new BigDecimal("0") : new BigDecimal(price);
+  }
+
+  @Override
+  public String toString() {
+    return text + " : $" + price;
   }
 }

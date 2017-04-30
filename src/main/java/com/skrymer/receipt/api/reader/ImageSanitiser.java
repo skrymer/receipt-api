@@ -4,10 +4,14 @@ import java.awt.image.BufferedImage;
 import java.nio.file.Path;
 
 /**
- * Created by skrymer on 29/04/17.
+ * TODO
  */
 public interface ImageSanitiser {
 
-
+  /**
+   * TODO
+   * @param pathToImage
+   * @return
+   */
   BufferedImage sanitise(Path pathToImage);
 }
